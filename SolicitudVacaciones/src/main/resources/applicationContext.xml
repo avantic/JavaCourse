@@ -10,6 +10,8 @@
  	<beans profile="testing">
  		<bean id="employeeDao" class="net.avantic.course.vacation.dao.memory.EmployeeInMemoryDAO" />
  		<bean id="vacationRequestDao" class="net.avantic.course.vacation.dao.memory.VacationRequestInMemoryDAO" />
+ 		
+ 		<bean id="doVacationRequestFacade" class="net.avantic.course.vacation.facade.impl.DoVacationRequestFacadeImpl" />
  	</beans>
  	
  	<beans profile="production">

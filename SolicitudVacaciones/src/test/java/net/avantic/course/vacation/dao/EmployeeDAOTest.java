@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ActiveProfiles("testing")
 public class EmployeeDAOTest {
 	
-	/* WARNING: this tests are not unit tests, they may preserve the given order */
+	/* WARNING: these tests are not unit tests, they may preserve the given order */
 
 	@Autowired
 	private EmployeeDAO employeeDao;

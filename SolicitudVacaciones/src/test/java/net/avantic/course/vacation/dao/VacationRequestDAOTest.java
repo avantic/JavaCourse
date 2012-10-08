@@ -21,6 +21,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 })
 @ActiveProfiles("testing")
 public class VacationRequestDAOTest {
+	
+	/* WARNING: these tests are not unit tests, they may preserve the given order */
 
 	@Autowired
 	private VacationRequestDAO vacationRequestDao;

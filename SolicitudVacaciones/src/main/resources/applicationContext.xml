@@ -9,5 +9,9 @@
  
  	<beans profile="testing">
  		<bean id="employeeDao" class="net.avantic.course.vacation.dao.memory.EmployeeInMemoryDAO" />
+ 		<bean id="vacationRequestDao" class="net.avantic.course.vacation.dao.memory.VacationRequestInMemoryDAO" />
+ 	</beans>
+ 	
+ 	<beans profile="production">
  	</beans>
 </beans>

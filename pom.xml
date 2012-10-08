@@ -8,6 +8,6 @@
 	<name>JavaCourse</name>
 	
 	<modules>
-	</modules>
+    <module>java-hello</module>
+  </modules>
 </project>
-

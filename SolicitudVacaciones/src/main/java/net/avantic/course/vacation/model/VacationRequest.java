@@ -1,9 +1,17 @@
 package net.avantic.course.vacation.model;
 
-import org.joda.time.DateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import net.avantic.course.vacation.moswl.Employee;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.joda.time.DateTime;
+
+@Entity
 public class VacationRequest {
 
 	private String id;
@@ -14,6 +22,9 @@ public class VacationRequest {
 	
 	private DateTime finalDate;
 
+	@Id
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	public String getId() {
 		return id;
 	}
@@ -22,6 +33,8 @@ public class VacationRequest {
 		this.id = id;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="employeeId")
 	public Employee getEmployee() {
 		return employee;
 	}

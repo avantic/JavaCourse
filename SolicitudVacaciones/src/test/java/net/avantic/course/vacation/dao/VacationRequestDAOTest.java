@@ -5,9 +5,10 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
+import net.avantic.course.vacation.model.Employee;
 import net.avantic.course.vacation.model.VacationRequest;
-import net.avantic.course.vacation.moswl.Employee;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,11 @@ public class VacationRequestDAOTest {
 
 	@Autowired
 	private VacationRequestDAO vacationRequestDao;
+	
+	@Before
+	public void setup() {
+		vacationRequestDao.resetStore();
+	}
 	
 	@Test
 	public void whenVacationRequestIsStoreReceiveUniqueIdentifier() throws Exception {
@@ -51,6 +57,10 @@ public class VacationRequestDAOTest {
 	
 	@Test
 	public void vacationRequestCanBeRecoveredById() throws Exception {
+		Employee employee = new Employee("Foo Bar");
+		VacationRequest request = new VacationRequest();
+		request.setEmployee(employee);
+		vacationRequestDao.save(request);
 		List<VacationRequest> requests = vacationRequestDao.findByEmployee("Foo Bar");
 		VacationRequest requestByName = requests.get(0);
 		

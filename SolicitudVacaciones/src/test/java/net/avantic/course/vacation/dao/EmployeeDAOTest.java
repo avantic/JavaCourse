@@ -2,7 +2,7 @@ package net.avantic.course.vacation.dao;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import net.avantic.course.vacation.moswl.Employee;
+import net.avantic.course.vacation.model.Employee;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

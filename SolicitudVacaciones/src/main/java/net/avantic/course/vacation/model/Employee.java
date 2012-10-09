@@ -1,4 +1,4 @@
-package net.avantic.course.vacation.moswl;
+package net.avantic.course.vacation.model;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -9,6 +9,8 @@ public class Employee {
 	private String id;
 	
 	private String name;
+	
+	private String mail;
 	
 	public Employee() {}
 
@@ -30,6 +32,14 @@ public class Employee {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getMail() {
+		return mail;
+	}
+	
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 	
 	@Override

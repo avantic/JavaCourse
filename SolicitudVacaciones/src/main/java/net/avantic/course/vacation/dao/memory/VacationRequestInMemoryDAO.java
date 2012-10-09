@@ -37,4 +37,8 @@ public class VacationRequestInMemoryDAO implements VacationRequestDAO {
 		return new VacationRequest();
 	}
 
+	public void resetStore() {
+		map.clear();
+	}
+
 }

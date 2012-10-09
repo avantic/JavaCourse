@@ -12,4 +12,6 @@ public interface VacationRequestDAO {
 
 	public VacationRequest get(String id);
 
+	public void resetStore();
+
 }

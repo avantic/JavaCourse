@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import net.avantic.course.vacation.dao.EmployeeDAO;
-import net.avantic.course.vacation.moswl.Employee;
+import net.avantic.course.vacation.model.Employee;
 
 public class EmployeeInMemoryDAO implements EmployeeDAO {
 

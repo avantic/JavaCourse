@@ -1,6 +1,6 @@
 package net.avantic.course.vacation.dao;
 
-import net.avantic.course.vacation.moswl.Employee;
+import net.avantic.course.vacation.model.Employee;
 
 public interface EmployeeDAO {
 

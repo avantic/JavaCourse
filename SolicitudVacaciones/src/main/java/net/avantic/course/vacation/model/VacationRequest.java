@@ -2,7 +2,6 @@ package net.avantic.course.vacation.model;
 
 import org.joda.time.DateTime;
 
-import net.avantic.course.vacation.moswl.Employee;
 
 public class VacationRequest {
 

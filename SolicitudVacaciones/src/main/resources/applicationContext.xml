@@ -11,6 +11,8 @@
  		<bean id="employeeDao" class="net.avantic.course.vacation.dao.memory.EmployeeInMemoryDAO" />
  		<bean id="vacationRequestDao" class="net.avantic.course.vacation.dao.memory.VacationRequestInMemoryDAO" />
  		
+ 		<bean id="mailNotificationService" class="net.avantic.course.vacation.service.mail.MailNotificationServiceImpl" />
+ 		
  		<bean id="doVacationRequestFacade" class="net.avantic.course.vacation.facade.impl.DoVacationRequestFacadeImpl" />
  	</beans>
  	

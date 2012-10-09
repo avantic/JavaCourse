@@ -2,8 +2,8 @@ package net.avantic.course.vacation.facade;
 
 import static org.junit.Assert.*;
 import net.avantic.course.vacation.exception.ValidationException;
+import net.avantic.course.vacation.model.Employee;
 import net.avantic.course.vacation.model.VacationRequest;
-import net.avantic.course.vacation.moswl.Employee;
 
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -59,6 +59,18 @@ public class DoVacationRequestFacadeTest {
 		doVacationRequestFacade.execute(vacationRequest);
 		
 		assertNotNull(vacationRequest.getId());
+	}
+	
+	@Test
+	public void sendingMailNotification() throws Exception {
+		Employee employee = new Employee("Foo Bar");
+		employee.setMail("foo@bar.com");
+		VacationRequest vacationRequest = new VacationRequest();
+		vacationRequest.setEmployee(employee);
+		vacationRequest.setInitialDate(new DateTime());
+		vacationRequest.setFinalDate(new DateTime());
+		
+		doVacationRequestFacade.execute(vacationRequest);
 	}
 	
 }

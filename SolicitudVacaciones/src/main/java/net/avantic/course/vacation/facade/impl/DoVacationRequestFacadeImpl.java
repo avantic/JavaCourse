@@ -1,17 +1,21 @@
 package net.avantic.course.vacation.facade.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import net.avantic.course.vacation.dao.EmployeeDAO;
 import net.avantic.course.vacation.dao.VacationRequestDAO;
 import net.avantic.course.vacation.exception.ValidationException;
 import net.avantic.course.vacation.facade.DoVacationRequestFacade;
 import net.avantic.course.vacation.model.VacationRequest;
 import net.avantic.course.vacation.service.NotificationService;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class DoVacationRequestFacadeImpl implements DoVacationRequestFacade {
 
 	@Autowired
-	private VacationRequestDAO vacationRequestDAO;
+	private VacationRequestDAO vacationRequestDao;
+	
+	@Autowired
+	private EmployeeDAO employeeDao; 
 	
 	@Autowired
 	private NotificationService mailNotificationService;
@@ -24,7 +28,8 @@ public class DoVacationRequestFacadeImpl implements DoVacationRequestFacade {
 		if (vacationRequest.getFinalDate() == null)
 			throw new ValidationException("The vacation request should indicate a final date");
 		
-		vacationRequestDAO.save(vacationRequest);
+		employeeDao.save(vacationRequest.getEmployee());
+		vacationRequestDao.save(vacationRequest);
 		
 		if (vacationRequest.getEmployee().getMail() != null)
 			mailNotificationService.notify(

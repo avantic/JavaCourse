@@ -1,9 +1,9 @@
 package net.avantic.course.vacation.dao;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import net.avantic.course.vacation.model.Employee;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +23,11 @@ public class EmployeeDAOTest {
 	@Autowired
 	private EmployeeDAO employeeDao;
 	
-	@Test
-	public void whenEmployeeIsStoredReceiveUniqueIdentifier() throws Exception {
+	@Before
+	public void setup() {
+		employeeDao.resetStore();
 		Employee employee = new Employee("Foo Bar");
-		
 		employeeDao.save(employee);
-		
-		assertNotNull(employee.getId());
 	}
 	
 	@Test

@@ -10,4 +10,6 @@ public interface EmployeeDAO {
 
 	public Employee get(String id);
 
+	public void resetStore();
+
 }

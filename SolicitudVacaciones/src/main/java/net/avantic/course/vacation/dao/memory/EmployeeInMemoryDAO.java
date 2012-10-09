@@ -34,4 +34,8 @@ public class EmployeeInMemoryDAO implements EmployeeDAO {
 		return new Employee();
 	}
 
+	public void resetStore() {
+		map.clear();
+	}
+
 }

@@ -1,7 +1,6 @@
 package net.avantic.course.vacation.dao;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -28,28 +27,29 @@ public class VacationRequestDAOTest {
 	@Autowired
 	private VacationRequestDAO vacationRequestDao;
 	
+	@Autowired
+	private EmployeeDAO employeeDao;
+	
+	private Employee employee;
+	
+	private VacationRequest request;
+	
 	@Before
 	public void setup() {
 		vacationRequestDao.resetStore();
-	}
-	
-	@Test
-	public void whenVacationRequestIsStoreReceiveUniqueIdentifier() throws Exception {
-		VacationRequest request = new VacationRequest();
-		request.setEmployee(new Employee());
+		employeeDao.resetStore();
+		
+		employee = new Employee("Foo Bar");
+		employeeDao.save(employee);
+		
+		request = new VacationRequest();
+		request.setEmployee(employee);
 		
 		vacationRequestDao.save(request);
-		
-		assertNotNull(request.getId());
 	}
 	
 	@Test
 	public void vacationRequestCanBeRecoveredByEmployeeName () throws Exception {
-		Employee employee = new Employee("Foo Bar");
-		VacationRequest request = new VacationRequest();
-		request.setEmployee(employee);
-		vacationRequestDao.save(request);
-		
 		List<VacationRequest> requests = vacationRequestDao.findByEmployee("Foo Bar");
 		
 		assertEquals(request, requests.get(0));
@@ -57,10 +57,6 @@ public class VacationRequestDAOTest {
 	
 	@Test
 	public void vacationRequestCanBeRecoveredById() throws Exception {
-		Employee employee = new Employee("Foo Bar");
-		VacationRequest request = new VacationRequest();
-		request.setEmployee(employee);
-		vacationRequestDao.save(request);
 		List<VacationRequest> requests = vacationRequestDao.findByEmployee("Foo Bar");
 		VacationRequest requestByName = requests.get(0);
 		

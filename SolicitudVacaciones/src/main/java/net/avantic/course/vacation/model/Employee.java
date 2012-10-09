@@ -1,9 +1,15 @@
 package net.avantic.course.vacation.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.math.RandomUtils;
+import org.hibernate.annotations.GenericGenerator;
 
+@Entity
 public class Employee {
 
 	private String id;
@@ -18,6 +24,9 @@ public class Employee {
 		this.name = name;
 	}
 
+	@Id
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	public String getId() {
 		return id;
 	}

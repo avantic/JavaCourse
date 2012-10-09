@@ -13,6 +13,7 @@
 		
  		<link type="text/css" href="${URL_PREFIX}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" >
  		<link type="text/css" href="${URL_PREFIX}/resources/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" >
+ 		<link type="text/css" href="${URL_PREFIX}/resources/datepicker/css/datepicker.css" rel="stylesheet" >
  		
  		<style type="text/css">
 			body {
@@ -22,25 +23,10 @@
 	</head>
 	
 	<body>
-	
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
-				<div class="container-fluid">
-					<a class="btn btn-navbar" data-toggle="collapse"
-						data-target=".nav-collapse"> <span class="icon-bar"></span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span>
-					</a> <a class="brand" href="#">Project name</a>
-					<div class="nav-collapse collapse">
-						<p class="navbar-text pull-right">
-							Logged in as <a href="#" class="navbar-link">Username</a>
-						</p>
-						<ul class="nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</div>
-					<!--/.nav-collapse -->
+				<div class="container-fluid"> 
+					<a class="brand" href="#">Solicitud de vacaciones</a>
 				</div>
 			</div>
 		</div>
@@ -50,119 +36,62 @@
 				<div class="span3">
 					<div class="well sidebar-nav">
 						<ul class="nav nav-list">
-							<li class="nav-header">Sidebar</li>
-							<li class="active"><a href="#">Link</a></li>
+							<li class="nav-header">Vacaciones</li>
+							<li class="active"><a href="#">Solicitar vacaciones</a></li>
 							<li><a href="#">Link</a></li>
 							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li class="nav-header">Sidebar</li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li class="nav-header">Sidebar</li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>							
 						</ul>
 					</div>
-					<!--/.well -->
 				</div>
-				<!--/span-->
+				
 				<div class="span9">
-					<div class="hero-unit">
-						<h1>Hello, world!</h1>
-						<p>This is a template for a simple marketing or informational
-							website. It includes a large callout called the hero unit and
-							three supporting pieces of content. Use it as a starting point to
-							create something more unique.</p>
-						<p>
-							<a class="btn btn-primary btn-large">Learn more &raquo;</a>
-						</p>
-					</div>
-					<div class="row-fluid">
-						<div class="span4">
-							<h2>Heading</h2>
-							<p>Donec id elit non mi porta gravida at eget metus. Fusce
-								dapibus, tellus ac cursus commodo, tortor mauris condimentum
-								nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-								malesuada magna mollis euismod. Donec sed odio dui.</p>
-							<p>
-								<a class="btn" href="#">View details &raquo;</a>
-							</p>
+					<form class="form-horizontal">
+						<legend>Formulario de solicitud</legend>
+						<div class="control-group">
+							<label class="control-label" for="inputName">Nombre</label>
+							<div class="controls">
+								<input type="text" id="inputName" placeholder="Nombre y apellidos">
+							</div>
 						</div>
-						<!--/span-->
-						<div class="span4">
-							<h2>Heading</h2>
-							<p>Donec id elit non mi porta gravida at eget metus. Fusce
-								dapibus, tellus ac cursus commodo, tortor mauris condimentum
-								nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-								malesuada magna mollis euismod. Donec sed odio dui.</p>
-							<p>
-								<a class="btn" href="#">View details &raquo;</a>
-							</p>
+						<div class="control-group">
+							<label class="control-label" for="inputEmail">Email</label>
+							<div class="controls">
+								<input type="text" id="inputEmail" placeholder="Email">
+							</div>
 						</div>
-						<!--/span-->
-						<div class="span4">
-							<h2>Heading</h2>
-							<p>Donec id elit non mi porta gravida at eget metus. Fusce
-								dapibus, tellus ac cursus commodo, tortor mauris condimentum
-								nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-								malesuada magna mollis euismod. Donec sed odio dui.</p>
-							<p>
-								<a class="btn" href="#">View details &raquo;</a>
-							</p>
+						<div class="control-group">
+							<label class="control-label" for="inputInitialDate">Fecha de inicio</label>
+							<div class="controls">
+								<div class="input-append date" id="dp1" data-date="09/10/2012" data-date-format="dd/mm/yyyy">
+									<input id="inputInitialDate" type="text"> 
+									<span class="add-on"><i	class="icon-calendar"></i></span>
+								</div>
+							</div>
 						</div>
-						<!--/span-->
-					</div>
-					<!--/row-->
-					<div class="row-fluid">
-						<div class="span4">
-							<h2>Heading</h2>
-							<p>Donec id elit non mi porta gravida at eget metus. Fusce
-								dapibus, tellus ac cursus commodo, tortor mauris condimentum
-								nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-								malesuada magna mollis euismod. Donec sed odio dui.</p>
-							<p>
-								<a class="btn" href="#">View details &raquo;</a>
-							</p>
+						<div class="control-group">
+							<label class="control-label" for="inputFinalDate">Fecha de fin</label>
+							<div class="controls">
+								<div class="input-append date" id="dp2" data-date="09/10/2012"
+									data-date-format="dd/mm/yyyy">
+									<input id="inputFinalDate" type="text">
+									<span class="add-on"><i	class="icon-calendar"></i></span>
+								</div>
+							</div>
 						</div>
-						<!--/span-->
-						<div class="span4">
-							<h2>Heading</h2>
-							<p>Donec id elit non mi porta gravida at eget metus. Fusce
-								dapibus, tellus ac cursus commodo, tortor mauris condimentum
-								nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-								malesuada magna mollis euismod. Donec sed odio dui.</p>
-							<p>
-								<a class="btn" href="#">View details &raquo;</a>
-							</p>
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn">Solicitar</button>
+							</div>
 						</div>
-						<!--/span-->
-						<div class="span4">
-							<h2>Heading</h2>
-							<p>Donec id elit non mi porta gravida at eget metus. Fusce
-								dapibus, tellus ac cursus commodo, tortor mauris condimentum
-								nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-								malesuada magna mollis euismod. Donec sed odio dui.</p>
-							<p>
-								<a class="btn" href="#">View details &raquo;</a>
-							</p>
-						</div>
-						<!--/span-->
-					</div>
-					<!--/row-->
+					</form>
 				</div>
-				<!--/span-->
 			</div>
-			<!--/row-->
 	
 			<hr>
 	
 			<footer>
-			<p>&copy; Company 2012</p>
+			<p>&copy; Avantic 2012</p>
 			</footer>
 	
 		</div>
@@ -171,6 +100,19 @@
 		
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
     	<script src="${URL_PREFIX}/resources/bootstrap/js/bootstrap.min.js"></script>
-
+    	<script src="${URL_PREFIX}/resources/datepicker/js/bootstrap-datepicker.js"></script>
+    	
+    	<script>
+    		$(function() {
+    			$('#dp1').datepicker()
+    				.on('changeDate', function(ev) {
+    					$('#dp1').datepicker('hide');
+    				});
+    			$('#dp2').datepicker()
+    				.on('changeDate', function(ev) {
+    					$('#dp2').datepicker('hide');
+    				});;
+    		});
+    	</script>
 	</body>
 </html>

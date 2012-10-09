@@ -8,6 +8,7 @@ import net.avantic.course.vacation.exception.ValidationException;
 import net.avantic.course.vacation.facade.DoVacationRequestFacade;
 import net.avantic.course.vacation.model.VacationRequest;
 import net.avantic.course.vacation.service.NotificationService;
+import net.avantic.course.vacation.web.command.DoVacationRequestCommand;
 
 public class DoVacationRequestFacadeImpl implements DoVacationRequestFacade {
 
@@ -36,5 +37,9 @@ public class DoVacationRequestFacadeImpl implements DoVacationRequestFacade {
 					vacationRequest.getEmployee().getMail(), 
 					"Your vacation request is stored in the system");
 	}
+
+	public DoVacationRequestCommand newCommand() {
+		return new DoVacationRequestCommand();
+	}	
 
 }

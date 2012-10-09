@@ -39,5 +39,6 @@
  		<bean id="mailNotificationService" class="net.avantic.course.vacation.service.mail.MailNotificationServiceImpl" />
  		
  		<bean id="doVacationRequestFacade" class="net.avantic.course.vacation.facade.impl.DoVacationRequestFacadeImpl" />
+ 		<bean id="listVacationRequestsFacade" class="net.avantic.course.vacation.facade.impl.ListVacationRequestsFacadeImpl" />
  	</beans>
 </beans>

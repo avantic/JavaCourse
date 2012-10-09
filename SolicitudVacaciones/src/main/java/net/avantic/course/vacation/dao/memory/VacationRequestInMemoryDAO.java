@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.hibernate.cfg.NotYetImplementedException;
+
 import net.avantic.course.vacation.dao.VacationRequestDAO;
 import net.avantic.course.vacation.model.VacationRequest;
 
@@ -39,6 +41,10 @@ public class VacationRequestInMemoryDAO implements VacationRequestDAO {
 
 	public void resetStore() {
 		map.clear();
+	}
+
+	public List<VacationRequest> findAll() {
+		throw new NotYetImplementedException("Falta implementar, esté método es improbable que se llegue a usar");
 	}
 
 }

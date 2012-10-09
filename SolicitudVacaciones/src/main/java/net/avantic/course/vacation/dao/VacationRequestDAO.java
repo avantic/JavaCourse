@@ -14,4 +14,6 @@ public interface VacationRequestDAO {
 
 	public void resetStore();
 
+	public List<VacationRequest> findAll();
+
 }

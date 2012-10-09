@@ -33,4 +33,10 @@ public class VacationRequestHibernateDAO extends AbstractHibernateDAO implements
 		query.executeUpdate();
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<VacationRequest> findAll() {
+		Criteria criteria = getSession().createCriteria(VacationRequest.class);
+		return criteria.list();
+	}
+
 }

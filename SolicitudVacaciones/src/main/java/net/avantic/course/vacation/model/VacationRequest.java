@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 @Entity
@@ -42,6 +42,7 @@ public class VacationRequest {
 		this.employee = employee;
 	}
 
+	@Type(type="org.joda.time.contrib.hibernate.PersistentDateTime")
 	public DateTime getInitialDate() {
 		return initialDate;
 	}
@@ -50,6 +51,7 @@ public class VacationRequest {
 		this.initialDate = initialDate;
 	}
 
+	@Type(type="org.joda.time.contrib.hibernate.PersistentDateTime")
 	public DateTime getFinalDate() {
 		return finalDate;
 	}

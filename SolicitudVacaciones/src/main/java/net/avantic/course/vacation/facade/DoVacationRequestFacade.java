@@ -7,6 +7,8 @@ public interface DoVacationRequestFacade {
 
 	public void execute(VacationRequest vacationRequest);
 
+	public void execute(DoVacationRequestCommand command);
+
 	public DoVacationRequestCommand newCommand();
 
 }

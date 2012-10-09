@@ -3,11 +3,14 @@ package net.avantic.course.vacation.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import net.avantic.course.vacation.facade.DoVacationRequestFacade;
 import net.avantic.course.vacation.web.command.DoVacationRequestCommand;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,6 +26,13 @@ public class DoVacationRequestController {
 	@RequestMapping(value = "/vacationRequest", method = RequestMethod.GET)
 	public ModelAndView setupForm() {
 		DoVacationRequestCommand command = doVacationRequestFacade.newCommand();
+		
+		return new ModelAndView(VIEW_NAME, getModel(command));
+	}
+	
+	@RequestMapping(value = "/vacationRequest", method = RequestMethod.POST)
+	public ModelAndView processSubmit(@ModelAttribute DoVacationRequestCommand command, HttpServletRequest request) {
+		doVacationRequestFacade.execute(command);
 		
 		return new ModelAndView(VIEW_NAME, getModel(command));
 	}

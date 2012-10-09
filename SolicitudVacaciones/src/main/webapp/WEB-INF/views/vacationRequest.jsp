@@ -38,7 +38,7 @@
 						<ul class="nav nav-list">
 							<li class="nav-header">Vacaciones</li>
 							<li class="active"><a href="#">Solicitar vacaciones</a></li>
-							<li><a href="#">Link</a></li>
+							<li><a href="#">Solicitudes pendientes</a></li>
 							<li><a href="#">Link</a></li>
 							<li><a href="#">Link</a></li>							
 						</ul>
@@ -46,25 +46,25 @@
 				</div>
 				
 				<div class="span9">
-					<form class="form-horizontal">
+					<form:form class="form-horizontal" commandName="doVacationRequestCommand">
 						<legend>Formulario de solicitud</legend>
 						<div class="control-group">
 							<label class="control-label" for="inputName">Nombre</label>
 							<div class="controls">
-								<input type="text" id="inputName" placeholder="Nombre y apellidos">
+								<form:input type="text" id="name" path="name" placeholder="Nombre y apellidos" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="inputEmail">Email</label>
 							<div class="controls">
-								<input type="text" id="inputEmail" placeholder="Email">
+								<form:input type="text" id="mail" path="mail" placeholder="Email" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="inputInitialDate">Fecha de inicio</label>
 							<div class="controls">
 								<div class="input-append date" id="dp1" data-date="09/10/2012" data-date-format="dd/mm/yyyy">
-									<input id="inputInitialDate" type="text"> 
+									<form:input id="initialDate" path="initialDate" maxlength="10" cssClass="input-medium" placeholder="dd/mm/aaaa"/>
 									<span class="add-on"><i	class="icon-calendar"></i></span>
 								</div>
 							</div>
@@ -74,7 +74,7 @@
 							<div class="controls">
 								<div class="input-append date" id="dp2" data-date="09/10/2012"
 									data-date-format="dd/mm/yyyy">
-									<input id="inputFinalDate" type="text">
+									<form:input id="finalDate" path="finalDate" maxlength="10" cssClass="input-medium" placeholder="dd/mm/aaaa"/>
 									<span class="add-on"><i	class="icon-calendar"></i></span>
 								</div>
 							</div>
@@ -84,7 +84,7 @@
 								<button type="submit" class="btn">Solicitar</button>
 							</div>
 						</div>
-					</form>
+					</form:form>
 				</div>
 			</div>
 	

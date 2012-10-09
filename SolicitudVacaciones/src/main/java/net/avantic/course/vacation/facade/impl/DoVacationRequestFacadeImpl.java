@@ -6,6 +6,7 @@ import net.avantic.course.vacation.dao.EmployeeDAO;
 import net.avantic.course.vacation.dao.VacationRequestDAO;
 import net.avantic.course.vacation.exception.ValidationException;
 import net.avantic.course.vacation.facade.DoVacationRequestFacade;
+import net.avantic.course.vacation.model.Employee;
 import net.avantic.course.vacation.model.VacationRequest;
 import net.avantic.course.vacation.service.NotificationService;
 import net.avantic.course.vacation.web.command.DoVacationRequestCommand;
@@ -38,8 +39,21 @@ public class DoVacationRequestFacadeImpl implements DoVacationRequestFacade {
 					"Your vacation request is stored in the system");
 	}
 
+	public void execute(DoVacationRequestCommand command) {
+		Employee employee = new Employee();
+		employee.setName(command.getName());
+		employee.setMail(command.getMail());
+		
+		VacationRequest vacationRequest = new VacationRequest();
+		vacationRequest.setEmployee(employee);
+		vacationRequest.setInitialDate(command.getInitialDate());
+		vacationRequest.setFinalDate(command.getFinalDate());
+		
+		execute(vacationRequest);
+	}	
+
 	public DoVacationRequestCommand newCommand() {
 		return new DoVacationRequestCommand();
-	}	
+	}
 
 }

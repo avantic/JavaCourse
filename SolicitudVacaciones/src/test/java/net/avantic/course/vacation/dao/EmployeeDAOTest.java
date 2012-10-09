@@ -13,7 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
-	"classpath:applicationContext.xml"	
+	"classpath:applicationContext.xml",
+	"classpath:applicationContext-datasource.xml",
+	"classpath:applicationContext-hibernate.xml"
 })
 @ActiveProfiles("testing")
 public class EmployeeDAOTest {

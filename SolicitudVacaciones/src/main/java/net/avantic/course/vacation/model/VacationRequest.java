@@ -6,7 +6,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import net.avantic.course.vacation.moswl.Employee;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.joda.time.DateTime;

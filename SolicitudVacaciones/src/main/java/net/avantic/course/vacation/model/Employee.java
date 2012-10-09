@@ -1,4 +1,4 @@
-package net.avantic.course.vacation.moswl;
+package net.avantic.course.vacation.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

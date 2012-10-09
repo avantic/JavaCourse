@@ -2,8 +2,8 @@ package net.avantic.course.vacation.facade;
 
 import static org.junit.Assert.*;
 import net.avantic.course.vacation.exception.ValidationException;
+import net.avantic.course.vacation.model.Employee;
 import net.avantic.course.vacation.model.VacationRequest;
-import net.avantic.course.vacation.moswl.Employee;
 
 import org.joda.time.DateTime;
 import org.junit.Test;

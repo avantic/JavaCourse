@@ -5,8 +5,8 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
+import net.avantic.course.vacation.model.Employee;
 import net.avantic.course.vacation.model.VacationRequest;
-import net.avantic.course.vacation.moswl.Employee;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

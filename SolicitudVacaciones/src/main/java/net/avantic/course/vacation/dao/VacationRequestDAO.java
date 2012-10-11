@@ -16,4 +16,6 @@ public interface VacationRequestDAO {
 
 	public List<VacationRequest> findAll();
 
+	public void delete(VacationRequest vacationRequest);
+
 }

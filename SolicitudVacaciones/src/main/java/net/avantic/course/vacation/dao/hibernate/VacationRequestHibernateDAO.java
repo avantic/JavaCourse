@@ -39,4 +39,8 @@ public class VacationRequestHibernateDAO extends AbstractHibernateDAO implements
 		return criteria.list();
 	}
 
+	public void delete(VacationRequest vacationRequest) {
+		getSession().delete(vacationRequest);
+	}
+
 }

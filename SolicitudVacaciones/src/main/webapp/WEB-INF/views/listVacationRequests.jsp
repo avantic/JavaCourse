@@ -11,6 +11,7 @@
 					<th>Nombre</th>
 					<th>Fecha de inicio</th>
 					<th>Fecha de fin</th>
+					<th/>
 				</thead>
 				<tbody>
 					<c:forEach items="${vacationRequests}" var="vacationRequest" varStatus="status">
@@ -24,6 +25,7 @@
 						<td>
 							<joda:format value="${vacationRequest.finalDate}" pattern="dd/MM/yyyy" />
 						</td>
+						<td><a href="javascript:cancelVacationRequest('${vacationRequest.id}');"><i class="icon-remove"></i></a></td>
 					</tr>
 					</c:forEach>
 				</tbody>
@@ -32,5 +34,20 @@
 	</tiles:putAttribute>
 
 	<tiles:putAttribute name="content-script">
+		<script>
+			function cancelVacationRequest(id) {
+				$.ajax({
+					url: '${pageContext.request.contextPath}/vacationRequest/' + id,
+					type: 'DELETE',
+					success: function(msg) {
+						console.log('Hurray!!!');
+						document.location.reload();
+					},
+					error: function(msg) {
+						console.log(':-(');
+					}
+				});
+			}
+		</script>
 	</tiles:putAttribute>
 </tiles:insertTemplate>

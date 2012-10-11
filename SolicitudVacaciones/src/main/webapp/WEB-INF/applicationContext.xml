@@ -40,5 +40,6 @@
  		
  		<bean id="doVacationRequestFacade" class="net.avantic.course.vacation.facade.impl.DoVacationRequestFacadeImpl" />
  		<bean id="listVacationRequestsFacade" class="net.avantic.course.vacation.facade.impl.ListVacationRequestsFacadeImpl" />
+ 		<bean id="cancelVacationRequestFacade" class="net.avantic.course.vacation.facade.impl.CancelVacationRequestFacadeImpl" />
  	</beans>
 </beans>

@@ -47,4 +47,8 @@ public class VacationRequestInMemoryDAO implements VacationRequestDAO {
 		throw new NotYetImplementedException("Falta implementar, esté método es improbable que se llegue a usar");
 	}
 
+	public void delete(VacationRequest vacationRequest) {
+		throw new NotYetImplementedException("Falta implementar, esté método es improbable que se llegue a usar");
+	}
+
 }
